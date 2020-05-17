@@ -1,0 +1,63 @@
+/*solution of the problem statement with object oriented approach.
+User needs to provide input to test the given solution*/
+#include <bits/stdc++.h> 
+using namespace std; 
+class solution 
+{ 
+	/* Access specifier */
+	public: 
+	/* Data Members */
+	string a; 
+	/*Member Functions() 
+	printCombinations() is a recursive member function*/
+	void printCombinations(string a, int lptr, int rptr)  
+{  
+    /*This is the  Base case of our recursive function
+    if lptr and rptr points to the same position that means we have got one of our answer 
+     now print that answer*/
+    if (lptr == rptr)  
+        cout<<a<<endl;  
+    else
+    {  
+        /* Permutations made  
+        by fixing one element first and then using recursion going through
+         different transition states and   printing them*/
+        for (int i = lptr; i <= rptr; i++)  
+        {  /*fixing on one of the element is done her using swaping variables  
+			temp is a temporary char variable used to swap string character positions
+			by saving in it temporarily*/
+           char temp;
+        	temp = a[lptr];
+        	a[lptr] = a[i];
+        	a[i] = temp;
+            /*  printCombinations called 
+            recursively and then moving the lptr by 1*/
+           printCombinations(a, lptr+1, rptr);  
+            /*backtrack 
+            one step and produce other  combinations possible
+            by swapping it back to its original position*/
+            char temp1;
+        	temp = a[i];
+        	a[i] = a[lptr];
+        	a[lptr] = temp;
+          
+        }  
+    }  
+} 
+}; 
+
+int main() { 
+
+	/* Declare an object of class solution*/
+	solution s1; 
+
+	/*accessing data member*/ 
+	string userInput;
+	/*take user input*/
+	cin>>userInput;
+	s1.a = userInput; 
+
+	/*accessing member function*/ 
+	s1.printCombinations(s1.a,0,s1.a.size()-1); 
+	return 0; 
+} 
