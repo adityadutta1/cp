@@ -22,7 +22,7 @@ int no_paths(int m, int n)
 // for column 1 case
 	for (int i = 0; i < m; i++) 
 		dp[i][0] = 1; 
-//for column 2 case
+//for row 1 case
 	for (int j = 0; j < n; j++) 
 		dp[0][j] = 1; 
 
