@@ -6,10 +6,10 @@ long ar[5][5];
 
 void bfs(int s)
 {//graph structure is like this 
-//	1->2->3     4->5  1 connected with 2 , 2 connected with 3 and 5 , 4 connected with 5
+//	1->2->3       1 connected with 2 , 2 connected with 3 and 5 , 4 connected with 5
 //	   |
 //         v
-//	   5
+//	   5->4
 	ar[1][2] = 1;// this means 1 connected to 2
 	ar[2][3] = 1;// this means 2 connected to 3
 	ar[2][5] = 1;// this means 2 connected to 5
