@@ -7,7 +7,7 @@ if(o==n&&c==n)
 {
 cout<<s<<endl;
 return;
-
+// added comment
 }
 
 if(o<n)
